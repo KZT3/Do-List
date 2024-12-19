@@ -9,15 +9,17 @@
   <body class="bg-gray-400 p-10">
     <main class="w-[400px] mx-auto bg-white p-10 min-h-[500px]">
       <header class="mb-4">
-        <h1 class="text-3xl font-serif font-bold text-stone-950">Task Lists</h1>
+        <h1 class="text-3xl font-mono font-bold text-stone-950">Task Lists</h1>
       </header>
       <section class="flex justify-between justify-center mb-4">
         <input
-          class="flex flex-grow border border-stone-950 ps-3 focus-visible:outline-none"
+          class="flex flex-grow border border-stone-950 ps-3 focus-visible:outline-none font-mono"
           type="text"
+          id="taskInput"
         />
         <button
           class="border border-stone-950 bg-stone-950 text-white size-[50px] flex justify-center items-center"
+          id="addTaskBtn"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,25 +41,83 @@
         <div class="flex justify-between items-center">
           <h4 class="text-sm font-bold font-serif">Your List</h4>
           <div class="border px-6 bg-stone-950 rounded-full text-white">
-            <span>0</span>
+            <span id="doneTaskTotal">0</span>
             <span>/</span>
-            <span>0</span>
+            <span id="taskTotal">0</span>
           </div>
+        </div>
+        <div class="list-group" id="listGroup">
+          <div class="empty-stage last:block hidden">
+            <div class="flex justify-center flex-col items-center gap-3 mt-20">
+              <img
+                class="size-32"
+                src="../photo/undraw_no_data_re_kwbl.svg"
+                alt=""
+              />
+              <p class="font-mono">There is no job yet</p>
+            </div>
+          </div>
+
+          <!-- <div class="list">
+            <div class="flex justify-between border border-stone-950 p-4 mb-4">
+              <div class="flex gap-2">
+                <input type="checkbox" />
+                <p class="font-mono">Hello</p>
+              </div>
+              <div>
+                <button class="border border-stone-950 p-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+                    />
+                  </svg>
+                </button>
+                <button class="border border-stone-950 p-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div> -->
         </div>
       </section>
-      <section>
-        <div class="emptyStage last:block hidden">
-          <div class="flex flex-col items-center justify-center">
-            <img
-              src="../photo/undraw_no_data_re_kwbl.svg"
-              alt=""
-              class="size-32 mb-2"
-            />
-            <p class="font-semibold">You haven't any task.Add please....</p>
-          </div>
+      <!-- <section id="listGroup">
+      <div class="emptyStage last:block hidden">
+        <div class="flex flex-col items-center justify-center">
+          <img
+            src="../photo/undraw_no_data_re_kwbl.svg"
+            alt=""
+            class="size-32 mb-2"
+          />
+          <p class="font-semibold font-mono">
+            You haven't any task.Add please....
+          </p>
         </div>
-        <div class="border border-stone-950 p-4 mb-4">
-          <div class="flex justify-between">
+      </div>
+
+      <!-- <div class="list">
+          <div class="flex justify-between border border-stone-950 p-4 mb-4">
             <div class="flex gap-2">
               <input type="checkbox" />
               <p class="font-mono">Hello</p>
@@ -97,8 +157,9 @@
               </button>
             </div>
           </div>
-        </div>
-      </section>
+        </div> -->
+      <!-- </section> -->
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
